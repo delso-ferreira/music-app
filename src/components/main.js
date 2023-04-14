@@ -11,17 +11,18 @@ import PageSearch from '../pages/PageSearch';
 class main extends Component {
   render() {
     return (
-      <Switch>
-        <div>
+      <div>
+        <Switch>
           <Route exact path="/" component={ PageLogin } />
           <Route exact path="/search" component={ PageSearch } />
           <Route exact path="/album/:id" component={ PageAlbum } />
           <Route exact path="/favorites" component={ PageFavorites } />
           <Route exact path="/profile" component={ PageProfile } />
           <Route exact path="/profile/edit" component={ PageProfileEdit } />
-          <Route exact path="*" component={ PageNotFound } />
-        </div>
-      </Switch>
+          <Route path="*" component={ PageNotFound } />
+        </Switch>
+      </div>
+
     );
   }
 }
