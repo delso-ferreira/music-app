@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Loading extends Component {
+class Loading extends React.Component {
   render() {
     return (
       <h1>Carregando...</h1>

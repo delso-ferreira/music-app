@@ -5,16 +5,18 @@ import Loading from '../components/Loading';
 class PageLogin extends Component {
   state = {
     saveButtonDisable: true,
-    isLoading: true,
+    isLoading: false,
+    name: '',
   };
 
   handleValidButton = () => {
     const { name } = this.state;
 
     const maxNumber = 3;
+    const minLength = name.length >= maxNumber;
 
     this.setState({
-      saveButtonDisable: name.length < maxNumber,
+      saveButtonDisable: !minLength,
     });
   };
 
@@ -26,6 +28,7 @@ class PageLogin extends Component {
 
   handleClick = async () => {
     const { name } = this.state;
+    const { history } = this.props;
 
     this.setState({
       isLoading: true,
@@ -34,48 +37,47 @@ class PageLogin extends Component {
     this.setState({
       isLoading: false,
     });
+    history.push('/search');
   };
 
   render() {
-    // se for falso entao history.push e redireciona para o search
-
     const { saveButtonDisable, isLoading } = this.state;
-
- /*  const location = {
-      pathname: '/search',
-    };
- */
-    if (isLoading) {
-      <Loading />;
-    } else {
-      history.push(location);
-    }
 
     return (
       <div data-testid="page-login">
-        <form>
-          <label htmlFor="login">
-            Nome:
-          </label>
-          <input
-            data-testid="login-name-input"
-            type="text"
-            name="name"
-            onChange={ this.handleInputChange }
-          />
-          <button
-            type="button"
-            name="saveButtonDisable"
-            data-testid="login-submit-button"
-            disabled={ saveButtonDisable }
-            onClick={ this.handleClick }
-          >
-            Entrar
-          </button>
-        </form>
+        {isLoading
+          ? <Loading />
+          : (
+            <form>
+              <label htmlFor="login">
+                Nome:
+              </label>
+              <input
+                data-testid="login-name-input"
+                type="text"
+                name="name"
+                onChange={ this.handleInputChange }
+              />
+              <button
+                type="button"
+                name="saveButtonDisable"
+                data-testid="login-submit-button"
+                disabled={ saveButtonDisable }
+                onClick={ this.handleClick }
+              >
+                Entrar
+              </button>
+            </form>
+          )}
       </div>
     );
   }
 }
+
+PageLogin.propTypes = {
+  history: Proptypes.shape({
+    push: Proptypes.func,
+  }).isRequired,
+};
 
 export default PageLogin;
