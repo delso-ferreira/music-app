@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
 
 class PageProfileEdit extends Component {
   render() {
     return (
-      <div data-testid="page-profile-edit">PageProfileEdit</div>
+      <>
+        <Header />
+        <div data-testid="page-profile-edit">PageProfileEdit</div>
+      </>
     );
   }
 }
