@@ -74,10 +74,10 @@ class PageLogin extends Component {
   }
 }
 
-/* PageLogin.propTypes = {
-  history: Proptypes.shape({
-    push: Proptypes.func,
+PageLogin.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
   }).isRequired,
-}; */
+};
 
 export default PageLogin;
