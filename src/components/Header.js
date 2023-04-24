@@ -36,7 +36,7 @@ class Header extends Component {
         </p>
         <nav>
           <Link to="/search" data-testid="link-to-search"> Busca </Link>
-          <Link to="favorites" data-testid="link-to-favorites"> Favoritos</Link>
+          <Link to="/favorites" data-testid="link-to-favorites"> Favoritos</Link>
           <Link to="/profile" data-testid="link-to-profile"> Perfil </Link>
 
         </nav>
