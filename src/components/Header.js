@@ -29,11 +29,11 @@ class Header extends Component {
 
     return (
       <header data-testid="header-component">
-        <p>
+        eu sou o Header
+        <h1>
           {isLoading ? <Loading />
-            : <h3 data-testid="header-user-name">{ findUser }</h3> }
-          eu sou o Header
-        </p>
+            : <p data-testid="header-user-name">{ findUser }</p> }
+        </h1>
         <nav>
           <Link to="/search" data-testid="link-to-search"> Busca </Link>
           <Link to="/favorites" data-testid="link-to-favorites"> Favoritos</Link>
