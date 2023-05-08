@@ -18,6 +18,7 @@ class PageAlbum extends Component {
 
   musicRequisition = async () => {
     const { match: { params: { id } } } = this.props;
+    // https://v5.reactrouter.com/web/api/match
     const albumList = await getMusics(id);
 
     this.setState({
