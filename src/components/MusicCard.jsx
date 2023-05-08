@@ -10,8 +10,10 @@ class MusicCard extends Component {
   };
 
   async componentDidMount() {
-    await getFavoriteSongs();
-    const mapAllFavorites = getFavoriteSongs.some((music) => music.trackId === trackId);
+    // https://stackoverflow.com/questions/47970276/is-using-async-componentdidmount-good
+    const queryFavorites = await getFavoriteSongs();
+    const { trackId } = this.props;
+    const mapAllFavorites = queryFavorites.some((music) => music.trackId === trackId);
     if (mapAllFavorites) {
       this.setState({
         isCheck: true,
@@ -45,31 +47,33 @@ class MusicCard extends Component {
     const { isCheck, isLoading } = this.state;
     return (
       <div>
-        <h3>{trackName}</h3>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          {' '}
-          <code>audio</code>
-          .
-        </audio>
         { isLoading
           ? <Loading />
           : (
             <div>
-              <label
-                htmlFor={ trackId }
-                data-testid={ `checkbox-music-${trackId}` }
-              >
-                Favorita
-              </label>
-              <input
-                type="checkbox"
-                name={ previewUrl }
-                id={ trackId }
-                onChange={ this.handleMusic }
-                checked={ isCheck }
-              />
+              <h3>{trackName}</h3>
+              <audio data-testid="audio-component" src={ previewUrl } controls>
+                <track kind="captions" />
+                O seu navegador não suporta o elemento
+                {' '}
+                <code>audio</code>
+                .
+              </audio>
+              <form>
+                <label
+                  htmlFor={ trackId }
+                  data-testid={ `checkbox-music-${trackId}` }
+                >
+                  Favorita
+                </label>
+                <input
+                  type="checkbox"
+                  name={ previewUrl }
+                  id={ trackId }
+                  onChange={ this.handleMusic }
+                  checked={ isCheck }
+                />
+              </form>
             </div>
           )}
       </div>

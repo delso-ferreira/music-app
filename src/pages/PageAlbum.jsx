@@ -17,7 +17,7 @@ class PageAlbum extends Component {
   }
 
   musicRequisition = async () => {
-    const { match: { param: { id } } } = this.props;
+    const { match: { params: { id } } } = this.props;
     const albumList = await getMusics(id);
 
     this.setState({
@@ -53,7 +53,7 @@ class PageAlbum extends Component {
 
 PageAlbum.propTypes = {
   match: PropTypes.shape({
-    param: PropTypes.shape({
+    params: PropTypes.shape({
       id: PropTypes.string,
     }),
   }).isRequired,
