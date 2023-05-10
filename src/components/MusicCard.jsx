@@ -23,18 +23,21 @@ class MusicCard extends Component {
 
   handleMusic = async () => {
     const { isCheck } = this.state;
-    const { trackId } = this.props;
+    const { trackId, updateFavorites, previewUrl, trackName } = this.props;
     this.setState({
       isLoading: true,
     });
     if (isCheck === false) {
-      await addSong(trackId);
+      await addSong({ trackId, previewUrl, trackName });
       this.setState({
         isLoading: false,
         isCheck: true,
       });
     } else {
-      await removeSong(trackId);
+      await removeSong({ trackId, previewUrl, trackName });
+      if (updateFavorites) {
+        await updateFavorites();
+      }
       this.setState({
         isLoading: false,
         isCheck: false,
