@@ -4,7 +4,7 @@ import { getUser } from '../services/userAPI';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 
-class Profile extends Component {
+class PageProfile extends Component {
   state = {
     isLoading: true,
     name: '',
@@ -52,4 +52,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default PageProfile;
