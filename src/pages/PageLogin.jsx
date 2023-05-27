@@ -67,7 +67,7 @@ class PageLogin extends Component {
               />
               <div className="form__button--container">
                 <button
-                  type="button"
+                  type="submit"
                   name="saveButtonDisable"
                   disabled={ saveButtonDisable }
                   onClick={ this.handleClick }

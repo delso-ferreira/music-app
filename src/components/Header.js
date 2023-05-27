@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
 import './header.css';
+import Logo from '../images/test1-removebg-preview.png';
 
 class Header extends Component {
   state = {
@@ -31,17 +32,17 @@ class Header extends Component {
     return (
       <div className="container">
         <div className="card text-center">
-          <header data-testid="header-component" className="card-title">
-            Music App
-            <h1 className="card-text">
+          <img src={ Logo } alt="logo" />
+          <header>
+            <p className="card-title">
+              Bem vindo ao Music App
               {isLoading ? <Loading />
                 : <p data-testid="header-user-name">{ findUser }</p> }
-            </h1>
-            <nav>
+            </p>
+            <nav className="header__nav--buttons">
               <Link
                 to="/search"
-                data-testid="link-to-search"
-                className="btn btn-primary"
+                className="btn btn-outline-secondary btn-sm"
               >
                 {' '}
                 Busca
@@ -50,8 +51,7 @@ class Header extends Component {
               </Link>
               <Link
                 to="/favorites"
-                data-testid="link-to-favorites"
-                className="btn btn-primary"
+                className="btn btn-outline-secondary btn-sm"
               >
                 {' '}
                 Favoritos
@@ -59,8 +59,7 @@ class Header extends Component {
               </Link>
               <Link
                 to="/profile"
-                data-testid="link-to-profile"
-                className="btn btn-primary"
+                className="btn btn-outline-secondary btn-sm"
               >
                 {' '}
                 Perfil
