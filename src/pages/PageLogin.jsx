@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import './pagelogin.css';
 
 class PageLogin extends Component {
   state = {
@@ -45,7 +46,7 @@ class PageLogin extends Component {
     const { saveButtonDisable, isLoading } = this.state;
 
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="form__login">
         {isLoading
           ? <Loading />
           : (
