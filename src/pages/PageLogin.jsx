@@ -55,19 +55,23 @@ class PageLogin extends Component {
                 Sign Up
               </label>
               <input
+                placeholder="Type your name"
                 className="form__login--input"
                 type="text"
                 name="name"
                 onChange={ this.handleInputChange }
               />
-              <button
-                type="button"
-                name="saveButtonDisable"
-                disabled={ saveButtonDisable }
-                onClick={ this.handleClick }
-              >
-                Entrar
-              </button>
+              <div className="form__button--container">
+                <button
+                  type="button"
+                  name="saveButtonDisable"
+                  disabled={ saveButtonDisable }
+                  onClick={ this.handleClick }
+                  className="btn btn-outline-info"
+                >
+                  Entrar
+                </button>
+              </div>
             </form>
           )}
       </div>
