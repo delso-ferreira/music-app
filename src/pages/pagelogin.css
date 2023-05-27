@@ -9,9 +9,15 @@
 .form__login--input {
     font-family: "Maven Pro";
     font-size: 12px;
-    margin: 5px;
+    margin: 10px;
     width: 250px;
     text-align: center;
+    border-radius: 7px;
+    border-style: none;
+}
+
+label {
+    color:aquamarine;
 }
 
 button {
@@ -27,13 +33,29 @@ button {
 
 .form__login--image {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 120px;
 }
 
 img {
     display: flex;
-    flex-direction: column;
     height: 60px;
+    margin: auto; /* Alinha a imagem no centro horizontalmente */
+}
+
+img:hover {
+    animation: zoomInOut 0.5s infinite alternate;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
