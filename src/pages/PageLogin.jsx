@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 import './pagelogin.css';
+import test1 from '../images/test1-removebg-preview.png';
 
 class PageLogin extends Component {
   state = {
@@ -51,6 +52,9 @@ class PageLogin extends Component {
           ? <Loading />
           : (
             <form>
+              <div className="form__login--image">
+                <img src={ test1 } alt="logo" />
+              </div>
               <label htmlFor="login">
                 Sign Up
               </label>
