@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.card__container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card.text-center{
+    display: flex;
+    background-color:unset;
+    padding: 5px;
+    width: 800px;
+    height: 100px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Maven Pro';
+}
+
+.header__navbar {
+    display: flex;
+    align-items: center;
+    justify-content: start; 
+}
+
+.btn.btn-outline-info {
+    display: flex;
+    margin: 5px;
+}
+
+img {
+    width: 50px;
+}

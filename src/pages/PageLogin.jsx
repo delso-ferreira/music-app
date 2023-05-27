@@ -52,10 +52,10 @@ class PageLogin extends Component {
           : (
             <form>
               <label htmlFor="login">
-                Nome:
+                Sign Up
               </label>
               <input
-                data-testid="login-name-input"
+                className="form__login--input"
                 type="text"
                 name="name"
                 onChange={ this.handleInputChange }
@@ -63,7 +63,6 @@ class PageLogin extends Component {
               <button
                 type="button"
                 name="saveButtonDisable"
-                data-testid="login-submit-button"
                 disabled={ saveButtonDisable }
                 onClick={ this.handleClick }
               >

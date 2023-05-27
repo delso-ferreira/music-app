@@ -4,3 +4,8 @@
     align-items: center;
     min-height: 100vh;
 }
+
+.form__login--input {
+    font-family: "Maven Pro";
+    margin: 5px;
+}
