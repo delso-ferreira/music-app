@@ -41,7 +41,7 @@ button {
 img {
     display: flex;
     height: 60px;
-    margin: auto; /* Alinha a imagem no centro horizontalmente */
+    margin: auto;
 }
 
 img:hover {

@@ -36,6 +36,7 @@ class PageSearch extends Component {
     const { name } = this.state;
     this.setState({
       isLoading: true,
+      artistList: [],
     });
     const inputSearch = await searchAlbumsAPI(name);
     this.setState({
