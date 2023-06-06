@@ -45,17 +45,17 @@ img {
 }
 
 img:hover {
-    animation: zoomInOut 0.5s infinite alternate;
+    animation: zoomInOut 0.8s infinite alternate;
 }
 
 @keyframes zoomInOut {
     0% {
-        transform: scale(1);
+        transform:scale(1);
     }
     50% {
-        transform: scale(1.2);
+        transform:scale(1.5);
     }
     100% {
-        transform: scale(1);
+        transform:scale(1);
     }
 }
