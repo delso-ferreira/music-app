@@ -1,6 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(to top left, purple, rgb(18, 53, 85));
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
 .search_label {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 100px;
     align-items: flex-start;
 }
@@ -35,6 +44,13 @@
 
 .search__album-image:hover {
     animation:unset;
+}
+
+p {
+    text-shadow: 2px;
+    color: aliceblue;
+    font-family: 'Maven Pro';
+    letter-spacing: 2px;
 }
 
 .search__artist-id {

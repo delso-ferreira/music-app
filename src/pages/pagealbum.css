@@ -1,0 +1,30 @@
+.page__album-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-album {
+ display: flex;
+ flex-direction: column;
+ align-content: center;
+}
+
+
+.artist-name {  
+    display: flex;
+    margin: 50px;
+    justify-content: center;
+    color:aquamarine;
+    font-family: 'Maven Pro';
+    text-shadow: 0 0 3px purple, 0 0 5px #0000FF;   
+}
+
+.album-name {
+    display: flex;
+    justify-content: center;
+}
+
+.page__album-map {
+    display: flex;
+    justify-content: center;
+}

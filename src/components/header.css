@@ -17,11 +17,26 @@
 .card.text-center{
     display: flex;
     flex-direction: column;
-    background-color:unset;
+    --s: 194px; /* control the size */
+    --c1: #f6edb3;
+    --c2: #acc4a3;
+  
+    --_l:#0000 calc(25%/3),var(--c1) 0 25%,#0000 0;
+    --_g:conic-gradient(from 120deg at 50% 87.5%,var(--c1) 120deg,#0000 0);
+    background:
+    var(--_g),var(--_g) 0 calc(var(--s)/2),
+    conic-gradient(from 180deg at 75%,var(--c2) 60deg,#0000 0),
+    conic-gradient(from 60deg at 75% 75%,var(--c1) 0 60deg,#0000 0),
+    linear-gradient(150deg,var(--_l)) 0 calc(var(--s)/2),
+    conic-gradient(at 25% 25%,#0000 50%,var(--c2) 0 240deg,var(--c1) 0 300deg,var(--c2) 0),
+    linear-gradient(-150deg,var(--_l)) #55897c /* third color here */;
+    background-size: calc(0.866*var(--s)) var(--s);
     padding: 5px;
-    width: 800px;
+    width: 650px;
     height: 100px;
     margin-bottom: 10px;
+    border-radius: 8px;
+    margin-top: 5px;
 }
 
 .card-title {
@@ -30,15 +45,16 @@
     justify-content: left;
     align-items: center;
     font-family: 'Maven Pro';
-    color: white;
-    font-size: 12px;
+    color: black;
+    font-size: 10px;
 }
 
-p {
+.header-user-name {
     margin: 3px;
     font-weight: bold;
     font-family: 'Maven Pro';
     letter-spacing: 1px;
+    color: black;
 }
 
 

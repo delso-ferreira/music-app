@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import './pagealbum.css';
 
 class PageAlbum extends Component {
   state = {
@@ -30,23 +31,27 @@ class PageAlbum extends Component {
   render() {
     const { album, isLoading, musics } = this.state;
     return (
-      <div data-testid="page-album">
-        PageAlbum
+      <div className="page__album-container">
         <Header />
-        <h1 data-testid="artist-name">{ album.artistName }</h1>
-        <img src={ album.artworkUrl100 } alt={ album.artistName } />
-        <p data-testid="album-name">{ album.collectionName }</p>
-        { isLoading
-          ? <Loading />
-          : musics.map((music) => (
-            <div key={ music.trackName }>
-              <MusicCard
-                trackId={ music.trackId }
-                previewUrl={ music.previewUrl }
-                trackName={ music.trackName }
-              />
-            </div>
-          ))}
+        <div className="page-album">
+          {/* <img src={ album.artworkUrl100 } alt={ album.artistName } /> */}
+          <h1 className="artist-name">{ album.artistName }</h1>
+          <p className="album-name">{ album.collectionName }</p>
+          { isLoading
+            ? <Loading />
+            : musics.map((music) => (
+              <div
+                key={ music.trackName }
+                className="page__album-map"
+              >
+                <MusicCard
+                  trackId={ music.trackId }
+                  previewUrl={ music.previewUrl }
+                  trackName={ music.trackName }
+                />
+              </div>
+            ))}
+        </div>
       </div>
     );
   }

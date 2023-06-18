@@ -54,7 +54,7 @@ class PageSearch extends Component {
       artistList, collectionId, retornoAPI } = this.state;
 
     return (
-      <div data-testid="page-search">
+      <div className="page-search">
         <Header />
         <div className="search_label">
           { isLoading
@@ -62,7 +62,7 @@ class PageSearch extends Component {
             : (
               <form>
                 <label htmlFor="artista">
-                  Artista
+                  Artist
                   <input
                     type="text"
                     name="artista"
@@ -80,7 +80,7 @@ class PageSearch extends Component {
                     disabled={ searchButtonDisabled }
                     onClick={ this.handleSearch }
                   >
-                    Pesquisar
+                    Search
                   </button>
                 </div>
               </form>)}
@@ -104,13 +104,13 @@ class PageSearch extends Component {
                       to={ `/album/${album.collectionId}` }
                       data-testid={ `link-to-album-${album.collectionId}` }
                     >
-                      Acessar
+                      Album
                     </Link>
                   </div>
                 ))}
               </div>
             )
-            : <p>Nenhum álbum foi encontrado</p>}
+            : <p>No results found</p>}
 
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import './musiccard.css';
 
 class MusicCard extends Component {
   state = {
@@ -49,15 +50,15 @@ class MusicCard extends Component {
     const { trackId, previewUrl, trackName } = this.props;
     const { isCheck, isLoading } = this.state;
     return (
-      <div>
+      <div className="music__container">
         { isLoading
           ? <Loading />
           : (
-            <div>
-              <h3>{trackName}</h3>
+            <div className="music__card-container">
+              <h3 className="music__card-trackname">{trackName}</h3>
               <audio data-testid="audio-component" src={ previewUrl } controls>
                 <track kind="captions" />
-                O seu navegador não suporta o elemento
+                Your browser does not support the element
                 {' '}
                 <code>audio</code>
                 .
@@ -67,7 +68,7 @@ class MusicCard extends Component {
                   htmlFor={ trackId }
                   data-testid={ `checkbox-music-${trackId}` }
                 >
-                  Favorita
+                  Favorite Music
                 </label>
                 <input
                   type="checkbox"
@@ -75,6 +76,7 @@ class MusicCard extends Component {
                   id={ trackId }
                   onChange={ this.handleMusic }
                   checked={ isCheck }
+                  className="music__card-favorite"
                 />
               </form>
             </div>

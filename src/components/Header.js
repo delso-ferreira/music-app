@@ -35,9 +35,9 @@ class Header extends Component {
           <img src={ Logo } alt="logo" />
           <header>
             <p className="card-title">
-              Bem vindo ao Music App
+              Welcome to Music-App
               {isLoading ? <Loading />
-                : <p data-testid="header-user-name">{ findUser }</p> }
+                : <p className="header-user-name">{ findUser }</p> }
             </p>
             <nav className="header__nav--buttons">
               <Link
