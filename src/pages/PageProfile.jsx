@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { getUser } from '../services/userAPI';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
+import './pageprofile.css';
 
 class PageProfile extends Component {
   state = {
@@ -31,20 +32,28 @@ class PageProfile extends Component {
       <div data-testid="page-profile">
         <Header />
         <div>
-          {isLoading
-            ? <Loading />
-            : (
-              <div>
-                <img src={ image } alt="Foto" data-testid="profile-image" />
-                <h2>Nome</h2>
-                <p>{name}</p>
-                <h2>E-mail</h2>
-                <p>{email}</p>
-                <h2>Descrição</h2>
-                <p>{description}</p>
-                <Link to="/profile/edit">Editar perfil</Link>
-              </div>
-            )}
+          <div className="page__profile-container">
+            {isLoading
+              ? <Loading />
+              : (
+                <div className="page__profile-form">
+                  <img src={ image } alt="Foto" className="profile-image" />
+                  <h2 className="profile-name">Name</h2>
+                  <p className="profile__name-input">{name}</p>
+                  <h2 className="profile-email">E-mail</h2>
+                  <p className="profile__email-input">{email}</p>
+                  <h2 className="profile-about">About</h2>
+                  <p className="profile__about-input">{description}</p>
+                  <Link
+                    to="/profile/edit"
+                    className="btn btn-outline-secondary btn-sm"
+                  >
+                    Edit
+
+                  </Link>
+                </div>
+              )}
+          </div>
         </div>
 
       </div>

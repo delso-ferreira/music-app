@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import './pagefavorites.css';
 
 class PageFavorites extends Component {
   state = {
@@ -54,7 +55,7 @@ class PageFavorites extends Component {
   render() {
     const { isLoading, favorites } = this.state;
     return (
-      <div data-testid="page-favorites">
+      <div className="page-favorites">
         <Header />
         {isLoading
           ? <Loading />
@@ -66,6 +67,7 @@ class PageFavorites extends Component {
               trackName={ favoritas.trackName }
               handleFavortes={ this.handleFavortes }
               key={ favoritas.trackId }
+              className="page__favorites-map"
             />
           )))}
       </div>

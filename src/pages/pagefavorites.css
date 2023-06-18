@@ -1,0 +1,10 @@
+.page-favorites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page__favorites-map {
+    display: flex;
+    flex-direction: column;
+}

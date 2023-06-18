@@ -17,7 +17,7 @@
 .card.text-center{
     display: flex;
     flex-direction: column;
-    --s: 194px; /* control the size */
+    --s: 194px;
     --c1: #f6edb3;
     --c2: #acc4a3;
   
